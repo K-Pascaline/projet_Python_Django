@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Average</title>
+</head>
+<body>
+    <h2>{{ student.nom_etudiant }} {{ student.prenom_etudiant }} - Annual Average</h2>
+    <p> : {{ student.id }}</p>
+    <p>Annual Average: {{ average|default:"No data" }}</p>
+
+    <!-- Add a link to download the PDF report -->
+    <p><a href="{% url 'myappDjango:student_report' student.id %}">Download PDF Report</a></p>
+</body>
+</html>

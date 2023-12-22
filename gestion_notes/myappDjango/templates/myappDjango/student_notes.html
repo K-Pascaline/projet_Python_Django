@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Notes</title>
+</head>
+<body>
+    <h2>{{ student.nom_etudiant }} {{ student.prenom_etudiant }} - Notes</h2>
+    <ul>
+        {% for note in notes %}
+            <li>{{ note.matiere.nom_matiere }} - {{ note.note }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add a link to download the PDF report -->
+    <p><a href="{% url 'myappDjango:student_report' student.id %}">Download PDF Report</a></p>
+</body>
+</html>
